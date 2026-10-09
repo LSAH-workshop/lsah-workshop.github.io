@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LSAH — Learning and Scaling with Agent Harnesses</title>
-  <meta name="description" content="Learning and Scaling with Agent Harnesses (LSAH), a proposed ICLR 2027 workshop on the interaction of model learning, harness design, and inference-time computation.">
+  <meta name="description" content="Learning and Scaling with Agent Harnesses (LSAH), a proposed ICLR 2027 workshop on model learning, harness design, inference-time computation, and continual adaptation.">
   <meta name="theme-color" content="#192f48">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Learning and Scaling with Agent Harnesses">
-  <meta property="og:description" content="A proposed ICLR 2027 workshop on model learning, harness design, and inference scaling. Preliminary website; details to be announced.">
+  <meta property="og:description" content="A proposed ICLR 2027 workshop on model learning, harness design, inference scaling, and continual adaptation. Preliminary website; details to be announced.">
   <meta property="og:url" content="https://lsah-workshop.github.io/">
   <link rel="canonical" href="https://lsah-workshop.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -48,16 +48,16 @@
         </div>
         <figure class="hero-figure">
           <!-- Editable vector artwork: execution is solid; learning feedback is dashed. -->
-          <svg viewBox="0 0 500 420" role="img" aria-labelledby="diagram-title diagram-desc">
+          <svg viewBox="0 0 500 500" role="img" aria-labelledby="diagram-title diagram-desc">
             <title id="diagram-title">The model and harness form a complete agent</title>
-            <desc id="diagram-desc">A learned model exchanges actions and observations with an execution harness. A learning feedback loop updates both. Their combined performance is studied through inference scaling and controlled model–harness evaluation.</desc>
+            <desc id="diagram-desc">A learned model exchanges actions and observations with an execution harness. A learning feedback loop updates both. Their combined performance is studied through inference scaling and controlled model–harness evaluation. Across sessions, histories, user feedback, and reusable skills support continual learning and personalization, with experience returning to update the harness.</desc>
             <defs>
               <pattern id="dot-grid" width="19" height="19" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".7" fill="#192f48" opacity=".15"/></pattern>
               <marker id="arrow-navy" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1l5 3-5 3" fill="none" stroke="#192f48" stroke-width="1.1"/></marker>
               <marker id="arrow-teal" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1l5 3-5 3" fill="none" stroke="#177070" stroke-width="1.1"/></marker>
             </defs>
-            <rect x="6" y="13" width="488" height="389" fill="url(#dot-grid)"/>
-            <g fill="none" stroke="#b6c5bb" stroke-width="1"><path d="M6 31V13h18M476 13h18v18M6 383v19h18M476 402h18v-19"/></g>
+            <rect x="6" y="13" width="488" height="472" fill="url(#dot-grid)"/>
+            <g fill="none" stroke="#b6c5bb" stroke-width="1"><path d="M6 31V13h18M476 13h18v18M6 466v19h18M476 485h18v-19"/></g>
             <text x="250" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" letter-spacing="2" fill="#5c6770">THE COMPLETE AGENT</text>
             <rect x="32" y="67" width="436" height="188" rx="6" fill="#f7f5ef" stroke="#c1cfc5"/>
             <path d="M119 98V78c0-11 9-20 20-20h222c11 0 20 9 20 20v20" fill="none" stroke="#177070" stroke-width="1.4" stroke-dasharray="4 4" marker-start="url(#arrow-teal)" marker-end="url(#arrow-teal)"/>
@@ -94,8 +94,19 @@
             <g stroke="#82afa0" fill="#e4eee7"><rect x="324" y="328" width="19" height="14" rx="2"/><rect x="324" y="348" width="19" height="14" rx="2"/></g>
             <g fill="#192f48"><circle cx="308.5" cy="335" r="1.4"/><circle cx="308.5" cy="355" r="1.4"/><circle cx="333.5" cy="335" r="1.4"/><circle cx="333.5" cy="355" r="1.4"/></g>
             <text x="358" y="341" font-family="Arial, sans-serif" font-size="11" fill="#5c6770">Component swaps</text><text x="358" y="356" font-family="Arial, sans-serif" font-size="11" fill="#5c6770">Matched budgets</text>
+            <path d="M250 275v130" fill="none" stroke="#a5b9ab" stroke-width="1.2" marker-end="url(#arrow-navy)"/>
+            <rect x="205" y="385" width="90" height="17" fill="#f7f5ef"/>
+            <text x="250" y="397" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5c6770">Across sessions</text>
+            <rect x="52" y="410" width="396" height="61" rx="4" fill="#e4eee7" stroke="#82afa0"/>
+            <text x="68" y="432" font-family="Arial, sans-serif" font-size="11" fill="#177070">CONTINUAL LEARNING &amp; PERSONALIZATION</text>
+            <text x="68" y="453" font-family="Arial, sans-serif" font-size="11" fill="#5c6770">Histories · user feedback · reusable skills</text>
+            <g transform="translate(409,424)" fill="none" stroke="#177070" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="0" y="0" width="18" height="23" rx="2" fill="#f9fbf7"/><path d="M5 6h8M5 11h8M5 16h5M5 27h17V5"/>
+            </g>
+            <path d="M448 440h17q10 0 10-10V226q0-10-10-10h-12" fill="none" stroke="#177070" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#arrow-teal)"/>
+            <text x="488" y="329" text-anchor="middle" transform="rotate(-90 488 329)" font-family="Arial, sans-serif" font-size="10" fill="#177070">Experience updates the harness</text>
           </svg>
-          <figcaption>Learning, execution, and evaluation—studied together.</figcaption>
+          <figcaption>Learning, execution, and evaluation—within and across sessions.</figcaption>
         </figure>
       </div>
       <div class="hero-meta">
@@ -109,13 +120,13 @@
     <section class="about-band" aria-labelledby="about-heading">
       <div class="wrap about-grid">
         <div><div class="eyebrow">A shared research question</div><h2 id="about-heading">What should the model learn?<br>What should the harness do?</h2></div>
-        <p>An agent’s policy emerges from a <strong>learned model</strong> and the <strong>program around it</strong>: context, tools, memory, search, verification, and control flow. We bring together post-training, reinforcement learning, program synthesis, and agent systems to study how these pieces work together—and where to invest computation.</p>
+        <p>An agent’s policy emerges from a <strong>learned model</strong> and the <strong>program around it</strong>: context, tools, memory, search, verification, and control flow. We bring together post-training, reinforcement learning, program synthesis, and agent systems to study how these pieces work together and adapt across sessions as environments evolve—and where to invest computation.</p>
       </div>
     </section>
 
     <section class="section research wrap" id="research" aria-labelledby="research-heading">
       <div class="section-heading">
-        <div><div class="section-number">01 / Research directions</div><h2 id="research-heading">Five ways into<br>the same question.</h2></div>
+        <div><div class="section-number">01 / Research directions</div><h2 id="research-heading">Six ways into<br>the same question.</h2></div>
         <p class="section-intro">When do learning and harness design substitute for one another? When do they become more powerful together? We welcome methods, theory, systems, controlled studies, and negative results.</p>
       </div>
       <div class="research-list">
@@ -124,6 +135,7 @@
         <article class="direction"><span class="direction-index">03</span><h3>Harness-aware inference<br>scaling laws</h3><div><p>How do post-training, harness design, and inference compute jointly determine performance? Develop predictive scaling relationships with explicit accounting for tokens, tool calls, latency, and harness development.</p><p class="direction-tags">Compute allocation &nbsp; / &nbsp; Cost accounting &nbsp; / &nbsp; Held-out predictions</p></div></article>
         <article class="direction"><span class="direction-index">04</span><h3>Joint learning and<br>co-adaptation</h3><div><p>How can model parameters and harness decisions be optimized jointly or alternately? Study joint reinforcement learning, co-evolving skills and policies, credit assignment, and which capabilities should be distilled into weights.</p><p class="direction-tags">Joint optimization &nbsp; / &nbsp; Credit assignment &nbsp; / &nbsp; Distillation</p></div></article>
         <article class="direction"><span class="direction-index">05</span><h3>Evaluation and attribution<br>of model–harness systems</h3><div><p>Separate gains from model learning, harness changes, their interaction, and additional resources. Use component swaps, crossed evaluations, matched budgets, and failure analyses that account for tuning and stochastic variability.</p><p class="direction-tags">Controlled comparisons &nbsp; / &nbsp; Benchmark quality &nbsp; / &nbsp; Failure analysis</p></div></article>
+        <article class="direction"><span class="direction-index">06</span><h3>Continual learning and<br>personalization through harnesses</h3><div><p>How can long-running agents learn and personalize across sessions as environments evolve? Learn memory and retrieval policies, reusable skills, and workflows from histories and user feedback. Study adaptation in weights versus persistent harness state and code, retention versus stale behavior, and long-term performance, transfer, and cumulative adaptation cost.</p><p class="direction-tags">Persistent memory &nbsp; / &nbsp; User feedback &nbsp; / &nbsp; Long-term adaptation</p></div></article>
       </div>
     </section>
 
